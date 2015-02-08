@@ -9,6 +9,6 @@ class EtsyController < ApplicationController
                                         :includes => ['Images', 'Shop'],
                                         :keywords => 'whiskey')
     @to_ruby = JSON.parse(search_results.body)
-    render :application
+    render :search
   end
 end
