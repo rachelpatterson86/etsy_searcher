@@ -5,9 +5,7 @@ class EtsyController < ApplicationController
   # GET /etsy_search => etsy#search
   # GET /etsy_search
   def search
-    search_results =  Etsy::Request.get('/listings/active',
-                                        :includes => ['Images', 'Shop'],
-                                        :keywords => 'whiskey')
+    search_results =  Etsy::Request.get('/listings/active',:includes => ['Images', 'Shop'],:keywords => 'whiskey')
     @to_ruby = JSON.parse(search_results.body)
     render :search
   end
