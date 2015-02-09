@@ -12,7 +12,7 @@ body {
   background: #F5F5F1;
 }
 
-.site_border {
+.site-border {
   background-color: #FFFFFF;
   width: 100%;
   margin-left: -10px;
@@ -22,12 +22,12 @@ body {
 header {
   position: relative;
   height: 80px;
-  margin-top: -10;
+  margin-top: -10px;
   border-bottom: 0px;
   box-shadow: 0px 1px 4px
   rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
 }
-.logo_nav_top {
+.logo-nav-top {
   float: left;
   width: 100px;
   margin-right: 20px;
@@ -40,35 +40,97 @@ div img {
   margin-top: 8px;
 }
 
-.form_container {
+.form-container {
   position: relative;
   float: left;
   height: 100%;
   width:35%;
 }
 
-.form_container_inner {
+.form-container-inner {
   position: absolute;
   height: 34px;
-  width:100%;
-  margin-top: -17;
+  width:342px;
+  margin-top: -17px;
   top: 50%
 }
+.text-field-wrapper {
+  white-space: nowrap;
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+}
 
+.text-field {
+  width:260px;
+  height: 34px;
+  position: relative;
+  border: 1px solid #CFCBC8;
+  background: #f9f9f8;
+  border-radius: 3px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-family: Arial,Helvetica,sans-serif;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 2px #E9E9E8,0 0 0 1000px #fbfbfa inset;
+}
+
+.text-field:focus {
+  outline: none;
+  border: 1px solid #34A8C4;
+  background: #FFF;
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+.submit-wrapper {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.submit-button {
+  line-height: 17px;
+  width: 82px;
+  height: 34px;
+  font-family: Arial,Helvetica,sans-serif;
+  padding: 7px 15px 8px;
+  border: 1px solid;
+  border-radius: 3px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-color: #54acc7 #4ca0ba #398a9d;
+  background: -webkit-linear-gradient(top, #98d0e0 2%, #68b8d1 8%, #4fa9c6 58%, #4fa9c6 95%, #4ca4c0);
+  display: inline-block;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+
+
+}
 header ul {
   height: 80px;
   float: right;
   padding-right: 20px;
-  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 header ul li {
   float: left;
   position: relative;
   list-style: none;
-  border: none;
+  border: 0 none;
   padding: 10px;
+  margin-top:20px;
   color: #666666;
+}
+
+header ul li.home img {
+  height:32px;
+  width: 32px;
 }
 .content {
   margin: 0 auto;
@@ -89,7 +151,7 @@ header ul li {
   display: inline-block;
 }
 
-.side_nav {
+.side-nav {
   background-color: #FFFFFF;
   width: 224;
   margin-right: 28px;
@@ -117,6 +179,6 @@ footer {
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require-tree .
+ *= require-self
  */
