@@ -17,4 +17,4 @@
 /tmp
 
 #
-/config/initializers/etsy
+/config/initializers/etsy.rb
