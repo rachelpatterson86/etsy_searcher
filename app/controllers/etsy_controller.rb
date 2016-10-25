@@ -1,12 +1,17 @@
 class EtsyController < ApplicationController
-  ETSY_API_TOKEN = ENV['ETSY_API_TOKEN']
-  # ETSY_API_TOKEN = kn84tew7pjzr6upsxq0m864t
-  # SECRET = va4dv3nqsl
+
   # GET /etsy_search => etsy#search
-  # GET /etsy_search
+  # EX: localhost:3000/etsy_search?q=whiskey
   def search
-    search_results =  Etsy::Request.get('/listings/active',:includes => ['Images', 'Shop'],:keywords => 'whiskey')
-    @listings = JSON.parse(search_results.body)
+    Etsy.api_key = ENV['ETSY_API_TOKEN']
+
+    search_results =  Etsy::Request.get(
+      '/listings/active',
+      :includes => ['Images', 'Shop'],
+      :keywords => 'whiskey'
+    )
+
+    @listings = JSON.parse(search_results.body)['results']
     render :search
   end
 end
