@@ -2,32 +2,31 @@
 <header class='site-border'>
 
   <div class='logo-nav-top'>
-    <img src='https://s3.amazonaws.com/siteassets.etsy.com/press/Website/etsy-logo.png'/>
+    <%=link_to image_tag('https://s3.amazonaws.com/siteassets.etsy.com/press/Website/etsy-logo.png'), '/?ref=lgo'%>
   </div>
   <div class='form-container'>
-      <div class='form-container-inner'>
-        <%= form_tag('/etsy_search', method: 'get', class:'form-container-inner') do %>
-        <div class='text-field-wrapper'>
-          <%= text_field_tag(:q, params[:q], class: 'text-field', placeholder: 'Search for items or shops') %>
-        </div>
-        <div class='submit-wrapper'>
-          <button type='submit' value='Search' class='submit-button'>Search</button>
-        </div>
-        <% end %>
+    <%= form_tag('/etsy_search', method: 'get', class:'form-container-inner') do %>
+      <div class='text-field-wrapper'>
+        <%= text_field_tag(:q, params[:q], class: 'text-field', placeholder: 'Search for items or shops') %>
       </div>
+      <div class='submit-wrapper'>
+        <button type='submit' value='Search' class='submit-button'>Search</button>
+      </div>
+    <% end %>
+  </div>
 
-  <ul>
-    <li class='home'>Home</li>
-    <li>Favorites</li>
-    <li>You</li>
-    <li>Cart</li>
-  </ul>
-
+  <div class='nav-menu'>
+    <ul>
+      <li><%=link_to 'Sell on Etsy', "https://www.etsy.com/sell?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2Fsearch", {id:'sell'}%></li>
+      <li><%=fa_icon 'home'%></li>
+      <li><%=fa_icon 'heart'%></li>
+      <li><%=fa_icon 'user'%></li>
+      <li><%=fa_icon 'shopping-cart'%></li>
+    </ul>
+  </div>
 </header>
 
 <div class ='content'>
-  <div class ='side-nav'></div>
-
   <div class ='content-listing-wrapper'>
     <div class ='content-listing'>
         <table>
@@ -36,7 +35,8 @@
               <% for list in listing %>
                 <td>
                   <div class ='card'>
-                  <%=image_tag(list['Images'][0]['url_570xN'], alt: list['Images'][0]['listing_image_id'], size: '260x206')%>
+                    <%next if list['Images'].nil?%>
+                    <%=link_to image_tag(list['Images'][0]['url_570xN'], alt: list['Images'][0]['listing_image_id'], size: '260x206'), list['url']%>
                   <div class= 'listing-details'>
                     <div class= 'listing-desc'>
                       <%=list['title']%>

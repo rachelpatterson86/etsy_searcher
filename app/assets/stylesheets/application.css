@@ -5,38 +5,58 @@
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 }
-
+*= require font-awesome
 */
 
 body {
   background: #F5F5F1;
   font-family: "Graphik Web","Arial","Helvetica",sans-serif;
+  margin: 0px
 }
 
 .site-border {
   background-color: #FFFFFF;
   width: 100%;
-  margin-left: -10px;
-  padding: 0px 25px;
 }
 
 header {
   position: relative;
   height: 80px;
-  margin-top: -10px;
   border-bottom: 0px;
   box-shadow: 0px 1px 4px
   rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
+
 .logo-nav-top {
   float: left;
   width: 100px;
-  margin-right: 20px;
-  height: 60px
+  height: 100%;
+}
+.logo-nav-top a {
+  height: 0px;
+}
+.logo-nav-top img {
+  margin-top: 8px;
 }
 
 div img {
   width: 100%;
+}
+.nav-menu {
+  float: right;
+}
+#sell {
+  padding: 8px;
+  line-height: 16px;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #0192B5;
+  font-size: 14px;
+}
+
+#sell:hover {
+  text-decoration: underline;
 }
 
 .card {
@@ -154,6 +174,7 @@ header ul li {
   padding: 10px;
   margin-top:20px;
   color: #666666;
+  font-size: 23px;
 }
 
 header ul li.home img {

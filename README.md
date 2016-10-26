@@ -43,23 +43,13 @@ Read the docs on this, you don't need to write your own API wrapper! Just sticki
 Make the search form actually link back to *our* etsy_search page with a new query param.
 This way you don't have to manually construct the URL every time. :)
 
-If you do this your controller method shouldn't try to make an API call if no query param is provided.
-
 ### BONUS 2
 
 Try to implement `hover` events for the items as on the Etsy page.
 
 ## RAILS BONUS
 
-If you finish the etsy page Saturday night and want to do more Rails hacking rather than the "styling bonuses",
-look into deploying the Etsy app to Heroku *OR* grab the betterblog app and ...
-
-1. Add some comments!
-   Hmm, blogs aren't very interesting without comments. Let's add comments!
-   * rails g resource Comment post:references body:text
-   * `rake db:migrate`
-   * Add associations
-   * Fix routes to make comments under posts. Also, only need create, delete.
+Deploy the Etsy app to Heroku
 
 ## Resources
 
