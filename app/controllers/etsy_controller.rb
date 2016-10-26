@@ -8,7 +8,7 @@ class EtsyController < ApplicationController
     search_results =  Etsy::Request.get(
       '/listings/active',
       :includes => ['Images', 'Shop'],
-      :keywords => 'whiskey'
+      :keywords => params[:q]
     )
 
     @listings = JSON.parse(search_results.body)['results']
