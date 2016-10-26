@@ -10,6 +10,7 @@ box-sizing: border-box;
 
 body {
   background: #F5F5F1;
+  font-family: "Graphik Web","Arial","Helvetica",sans-serif;
 }
 
 .site-border {
@@ -36,13 +37,36 @@ header {
 
 div img {
   width: 100%;
-  height: 100%;
-  margin-top: 8px;
+}
+
+.card {
+  border-radius: 3px;
+    background-color: #FFF;
+    border: 1px solid #E1E3DF;
+    border-bottom-color: #CBCCC9;
+    display: inline-block;
+    /*max-width: 240px;*/
+    position: relative;
+    /*width: 100%;*/
+}
+.listing-details {
+    margin: 6px;
+}
+
+.listing-desc {
+  color: #444;
+    font-size: 12px;
+    margin-bottom: 3px;
+   width: 250px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 td {
   width: 214px;
   height: 170px;
+  padding: 9px;
 }
 .form-container {
   position: relative;
@@ -164,6 +188,19 @@ header ul li.home img {
   padding: 25px 0px;
   position: absolute;
   height: 50px;
+}
+
+.card-price {
+  color: #78c042;
+  padding-left: 4px;
+  float: right;
+  font-size: 12px;
+}
+.card-shop-name {
+  color: #9A9A9A;
+  padding-left: 0px;
+  display: inline;
+  font-size: 12px;
 }
 
 footer {

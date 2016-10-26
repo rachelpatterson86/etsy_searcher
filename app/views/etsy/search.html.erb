@@ -30,20 +30,31 @@
 
   <div class ='content-listing-wrapper'>
     <div class ='content-listing'>
-      <div class ='listing-image'>
         <table>
           <% @listings.in_groups_of(4, false) do |listing| %>
             <tr>
               <% for list in listing %>
                 <td>
-                  <%= link_to image_tag(list['Images'][0]['url_570xN'], alt: list['Images'][0]['listing_image_id'], size: '214x170'), list['url'] %>
+                  <div class ='card'>
+                  <%=image_tag(list['Images'][0]['url_570xN'], alt: list['Images'][0]['listing_image_id'], size: '260x206')%>
+                  <div class= 'listing-details'>
+                    <div class= 'listing-desc'>
+                      <%=list['title']%>
+                    </div>
+                    <div class= 'card-shop-name'>
+                      <%=list['Shop']['shop_name']%>
+                    </div>
+                    <div class='card-price'>
+                      <%=number_to_currency list['price']%>
+                    </div>
+                  </div>
+                </div>
                 </td>
               <% end %>
             </tr>
           <% end %>
         </table>
       </div>
-    </div>
   </div>
 </div>
 
