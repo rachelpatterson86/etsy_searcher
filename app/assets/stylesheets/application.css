@@ -40,6 +40,10 @@ div img {
   margin-top: 8px;
 }
 
+td {
+  width: 214px;
+  height: 170px;
+}
 .form-container {
   position: relative;
   float: left;
