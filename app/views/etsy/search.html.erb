@@ -1,9 +1,9 @@
 
 <header class='site-border'>
-  <div class='logo-nav-top'>
-    <%=link_to image_tag('https://s3.amazonaws.com/siteassets.etsy.com/press/Website/etsy-logo.png', {id: 'etsy'}), '/?ref=lgo'%>
+  <div class='logo-nav-top float-left'>
+    <%=link_to image_tag('https://s3.amazonaws.com/siteassets.etsy.com/press/Website/etsy-logo.png',{id: 'logo'}), '/?ref=lgo'%>
   </div>
-  <div class='form-container'>
+  <div class='form-container float-left'>
     <%= form_tag('/etsy_search', method: 'get', class:'form-container-inner') do %>
       <div class='text-field-wrapper'>
         <%= text_field_tag(:q, params[:q], class: 'text-field', placeholder: 'Search for items or shops') %>
@@ -14,30 +14,40 @@
     <% end %>
   </div>
 
-  <ul class='nav-menu'>
-    <li><%=link_to 'Sell on Etsy', "https://www.etsy.com/sell?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2Fsearch", {id:'sell'}%></li>
-    <li><%=fa_icon 'home'%><span class="nav-text">Home</span></li>
-    <li><%=fa_icon 'heart'%><span class="nav-text">Favorites</span></li>
-    <li><%=fa_icon 'user'%><span class="nav-text">You</span></li>
-    <li><%=fa_icon 'shopping-cart'%><span class="nav-text">Cart</span></li>
+  <ul class='nav-menu float-right'>
+    <li class="float-left"><%=link_to 'Sell on Etsy', "https://www.etsy.com/sell?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2Fsearch", {id:'sell'}%></li>
+    <li class="float-left"><%=fa_icon 'home'%><span class="nav-text">Home</span></li>
+    <li class="float-left"><%=fa_icon 'heart'%><span class="nav-text">Favorites</span></li>
+    <li class="float-left"><%=fa_icon 'user'%><span class="nav-text">You</span></li>
+    <li class="float-left"><%=fa_icon 'shopping-cart'%><span class="nav-text">Cart</span></li>
   </ul>
 </header>
 
 <div class='content'>
-  <div class="sidebar">
-    <div class='sidebar-category'>
-      <ul class='list-unstyled'>
-        <li class='strong list-category-bottom'><%=link_to 'All categories', etsy_search_path(q: params[:q]), {class: 'text-grey'}%></li>
-        <% @categories.each do |category| %>
-        <%result = category.result%>
-          <li class='list-category-left list-category-bottom'><%=link_to result['short_name'], etsy_search_path(q: params[:q], c: result['name'])%></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class='sidebar-refine'></div>
+  <div class="sidebar float-left">
+    <h5 class="content-heading text-grey">Show results for:</h5>
+      <div class='sidebar-category'>
+        <ul class='list-unstyled'>
+          <li class='strong list-category-bottom'><%=link_to 'All categories', etsy_search_path(q: params[:q]), {class: 'text-grey'}%></li>
+          <% @categories.each do |category| %>
+          <%result = category.result%>
+            <li class='list-category-left list-category-bottom'><%=link_to result['short_name'], etsy_search_path(q: params[:q], c: result['name'])%></li>
+          <% end %>
+        </ul>
+      </div>
+    <h5 class="content-heading text-grey">Refine your search</h5>
+    <div class='sidebar-category'></div>
   </div>
 
-  <div class='content-listing'>
+  <div class='content-listing float-right'>
+    <div class="content-heading text-grey padding-heading">
+      <%=link_to 'All categories', etsy_search_path(q: params[:q])%>
+      <%=fa_icon 'chevron-right'%>
+      <%if params[:q]%>
+        <span class="strong">“<%=params[:q]%>”</span>
+      <%end%>
+      <span>(<%=@listings.count%> Results)</span>
+    </div>
     <table>
       <% @listings.in_groups_of(4, false) do |listing| %>
         <tr>
@@ -53,7 +63,7 @@
                   <div class= 'card-shop-name'>
                     <%=l['Shop']['shop_name']%>
                   </div>
-                  <div class='card-price'>
+                  <div class='card-price float-right'>
                     <%=number_to_currency l['price']%>
                   </div>
                 </div>

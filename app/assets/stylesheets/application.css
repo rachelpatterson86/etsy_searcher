@@ -14,99 +14,84 @@ body {
   margin: 0px
 }
 
-.site-border {
-  background-color: #FFFFFF;
-  width: 100%;
+a {
+  color: #0192B5;
+  text-decoration: none;
 }
 
-header {
-  position: relative;
+a:hover {
+  text-decoration: underline;
+}
+
+td {
+  width: 214px;
+  height: 170px;
+  padding: 9px;
+}
+
+/*header*/
+.site-border {
+  background-color: #FFFFFF;
   height: 80px;
+  width: 100%;
+  position: relative;
   border-bottom: 0px;
   box-shadow: 0px 1px 4px
   rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
-  width: 100%;
 }
 
 .logo-nav-top {
-  float: left;
   width: 100px;
   height: 100%;
 }
 
-.logo-nav-top a {
-  height: 0px;
-}
-
-.logo-nav-top img {
+#logo {
   margin-top: 8px;
+  width: 100%
 }
 
-.fa {
+.nav-menu .fa {
   display: block;
   text-align: center;
 }
 
-.nav-text {
-  color: #888;
-  font-size: 12px;
-  display: block;
-  margin-top: 5px;
-}
+/*main content*/
 
-#etsy {
-  width: 100%;
-}
-
-.nav-menu {
-  float: right;
-  margin: 0px;
-  padding: 0px;
-  padding-right: 20px;
-}
-
-.nav-menu>li:before{
-  content: '';
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 18px;
-  bottom: 20px;
-  background-color: #eee;
-  width: 1px;
-}
-
-.nav-menu>li:first-child:before {
-    content: initial;
-}
-
+/*main content - side panel*/
 .sidebar {
   width: 250px;
   padding-left: 18px;
-  border: 1px solid black;
-  float: left;
 }
 
 .sidebar-category {
-    border-radius: 3px;
-    background-color: #FFF;
-    border: 1px solid #E1E3DF;
-    border-bottom-color: #CBCCC9;
-    margin: 0 0 12px;
-    margin-bottom: 24px;
-    padding: 12px;
+  border-radius: 3px;
+  background-color: #FFF;
+  border: 1px solid #E1E3DF;
+  border-bottom-color: #CBCCC9;
+  margin: 0 0 12px;
+  margin-bottom: 24px;
+  padding: 12px;
 }
 
-.content-listing{
-   float: right;
+.content-heading {
+  font-size: 13px;
+  padding-bottom: 9px;
+  margin: 0;
+}
+
+.padding-heading {
+  padding-left: 12px;
+  padding-bottom: 0px;
+}
+.fa-chevron-right {
+  font-size: 8px;
+}
+.content {
+  margin-top: 30px;
 }
 
 .labels {
   padding-bottom: 9px;
-}
-a {
-  color: #0192B5;
-  text-decoration: none;
 }
 
 .strong {
@@ -134,16 +119,13 @@ a {
 #sell {
   padding: 8px;
   line-height: 16px;
-  text-decoration: none;
   box-sizing: border-box;
-  color: #0192B5;
   font-size: 14px;
 }
 
 #sell:hover {
   text-decoration: underline;
 }
-
 .card {
   background-color: #FFF;
   border: 1px solid #E1E3DF;
@@ -166,14 +148,8 @@ a {
   text-overflow: ellipsis;
 }
 
-td {
-  width: 214px;
-  height: 170px;
-  padding: 9px;
-}
 .form-container {
   position: relative;
-  float: left;
   height: 100%;
   width:35%;
 }
@@ -231,7 +207,7 @@ td {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-color: #54acc7 #4ca0ba #398a9d;
-  background: -webkit-linear-gradient(top, #98d0e0 2%, #68b8d1 8%, #4fa9c6 58%, #4fa9c6 95%, #4ca4c0);
+  background-color: #34A8C4;
   display: inline-block;
   color: #FFF;
   text-decoration: none;
@@ -241,22 +217,45 @@ td {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
 }
 
-header ul {
-  height: 80px;
-  float: right;
-  padding-right: 20px;
-  margin-top: 0px;
+.nav-menu {
+  margin: 0px;
+  padding-right: 35px;
 }
 
-header ul li {
-  float: left;
+.nav-menu>li:not(:first-child):before{
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  background-color: #eee;
+  width: 1px;
+}
+
+.nav-menu>li {
   position: relative;
   list-style: none;
   border: 0 none;
-  padding: 10px;
+  padding: 12px;
   margin-top:10px;
   color: #666666;
   font-size: 23px;
+}
+
+.nav-text {
+  color: #888;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }
 
 .content {
@@ -277,21 +276,9 @@ header ul li {
   display: inline-block;
 }
 
-.side-nav {
-  background-color: #FFFFFF;
-  width: 224;
-  margin-right: 28px;
-  margin-left: -10px;
-  float: left;
-  padding: 25px 0px;
-  position: absolute;
-  height: 50px;
-}
-
 .card-price {
   color: #78c042;
   padding-left: 4px;
-  float: right;
   font-size: 12px;
 }
 .card-shop-name {
