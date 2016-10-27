@@ -1,10 +1,24 @@
 == README
 
+##TYI Assignment
 Re-Create An Etsy Page - https://www.etsy.com/search?q=whiskey
 
 > Focus on the sidebar and the main content of items.
 > The sidebar should be there but its contents can be whatever you like.
 > i.e. You don't have to have the various parameters for the search box.
+##TODOS As of Now
+*Picking this up again after a year away from this. These are some of the functional bits that I want to add over time*
+1. Implement `hover` events for the items as on the Etsy page.
+2. Deploy the Etsy app to Heroku
+3. Add footer
+4. Add pagination
+5. Add sort by
+6. Update All categories > “shirt” (25 Results) to show breadcrumbs
+7. Show side bar sub categories for a category that was selected for the
+filtered search. And show their sub categories if those were selected.
+8. Add Refine search sidebar with all the bells and whistles
+9. Add sub header like the Etsy site.
+10. Add a surprise!
 
 ## Installation
 1. Create a new rails project named "etsy_searcher" with `rails new etsy_searcher`.
