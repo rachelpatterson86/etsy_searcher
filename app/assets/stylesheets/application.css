@@ -33,19 +33,104 @@ header {
   width: 100px;
   height: 100%;
 }
+
 .logo-nav-top a {
   height: 0px;
 }
+
 .logo-nav-top img {
   margin-top: 8px;
 }
 
-div img {
+.fa {
+  display: block;
+  text-align: center;
+}
+
+.nav-text {
+  color: #888;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+#etsy {
   width: 100%;
 }
+
 .nav-menu {
   float: right;
+  margin: 0px;
+  padding: 0px;
+  padding-right: 20px;
 }
+
+.nav-menu>li:before{
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 18px;
+  bottom: 20px;
+  background-color: #eee;
+  width: 1px;
+}
+
+.nav-menu>li:first-child:before {
+    content: initial;
+}
+
+.sidebar {
+  width: 250px;
+  padding-left: 18px;
+  border: 1px solid black;
+  float: left;
+}
+
+.sidebar-category {
+    border-radius: 3px;
+    background-color: #FFF;
+    border: 1px solid #E1E3DF;
+    border-bottom-color: #CBCCC9;
+    margin: 0 0 12px;
+    margin-bottom: 24px;
+    padding: 12px;
+}
+
+.content-listing{
+   float: right;
+}
+
+.labels {
+  padding-bottom: 9px;
+}
+a {
+  color: #0192B5;
+  text-decoration: none;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.text-grey {
+  color: #444;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  font-size: 13px;
+}
+.list-category-bottom {
+  padding-bottom: 6px;
+}
+
+.list-category-left {
+  padding-left: 12px;
+}
+
 #sell {
   padding: 8px;
   line-height: 16px;
@@ -60,27 +145,25 @@ div img {
 }
 
 .card {
-  border-radius: 3px;
-    background-color: #FFF;
-    border: 1px solid #E1E3DF;
-    border-bottom-color: #CBCCC9;
-    display: inline-block;
-    /*max-width: 240px;*/
-    position: relative;
-    /*width: 100%;*/
+  background-color: #FFF;
+  border: 1px solid #E1E3DF;
+  border-bottom-color: #CBCCC9;
+  display: inline-block;
+  position: relative;
 }
+
 .listing-details {
-    margin: 6px;
+  margin: 6px;
 }
 
 .listing-desc {
   color: #444;
-    font-size: 12px;
-    margin-bottom: 3px;
-   width: 250px;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
+  font-size: 12px;
+  margin-bottom: 3px;
+  width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 td {
@@ -156,9 +239,8 @@ td {
   font-weight: bold;
   cursor: pointer;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-
-
 }
+
 header ul {
   height: 80px;
   float: right;
@@ -172,19 +254,14 @@ header ul li {
   list-style: none;
   border: 0 none;
   padding: 10px;
-  margin-top:20px;
+  margin-top:10px;
   color: #666666;
   font-size: 23px;
 }
 
-header ul li.home img {
-  height:32px;
-  width: 32px;
-}
 .content {
-  margin: 0 auto;
-  width: 980px;
-  padding: 25px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .listing {
